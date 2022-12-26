@@ -15,8 +15,9 @@ int main()
         cout << "===== Selamat datang di Game Hub! ======\n";
         cout << "1. Tic-Tac-Toe\n"
             << "2. Hangman\n"
-            << "3. Batu Gunting Kertas\n";
-        cout << "Select a game (-1 untuk keluar): ";
+            << "3. Batu Gunting Kertas\n"
+            << "***KETIK -1 UNTUK KELUAR***\n";
+        cout << "Pilih game > ";
         cin >> aksi;
         while (aksi < 1 || aksi > 3)
         {
