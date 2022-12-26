@@ -6,8 +6,8 @@ using namespace std;
 struct grid
 {
 
-    char arrGrid[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
-    char displayGrid[9] = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
+    char arrGrid[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'}; // grid utama; digunakan untuk pengecekan kondisi menang
+    char displayGrid[9] = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '}; // grid sekunder; digunakan untuk di display di konsol.
     int giliran = 0;
 
     void updateGrid(char simbol, int index)
@@ -117,6 +117,11 @@ struct grid
 
 int ambilInput(int pemainKe)
 {
+    /*
+    ambil input pake getline() untuk mengambil string.
+    convert string menjadi char untuk cek nilai ascii.
+    jika angka, convert char menjadi int.
+    */
     string s;
     char c[1];
     getInput:
@@ -154,51 +159,6 @@ int ticTacToe()
         << "- Untuk menang, player harus membentuk garis (bisa lurus, bisa miring).\n"
         << "- Untuk KELUAR game, ketik -1.\n";
     
-
-    /* while (true)
-    {
-        Grid.print();
-        if (Grid.cekGameSelesai(2))
-        {
-            if (Grid.promptResetGame())
-            {
-                Grid.resetGame();
-                continue;
-            }
-            cout << "Game selesai.";
-            break;
-        }
-        
-        pilihan = ambilInput(1);
-        if (pilihan < 0) break;
-        while (Grid.cekIsiKotak(pilihan - 1))
-        {
-            cout << "Kotak ke " << pilihan << " sudah terisi. Mohon pilih kotak kosong.\n";
-            pilihan = ambilInput(1);
-        }
-        Grid.updateGrid('X', pilihan - 1);
-        Grid.print();
-        if (Grid.cekGameSelesai(1))
-        {
-            if (Grid.promptResetGame())
-            {
-                Grid.resetGame();
-                continue;
-            }
-            cout << "Game selesai.\n";
-            break;
-        }
-
-        pilihan = ambilInput(2);
-        if (pilihan < 0) break;
-        while (Grid.cekIsiKotak(pilihan - 1))
-        {
-            cout << "Kotak ke " << pilihan << " sudah terisi. Mohon pilih kotak kosong.\n";
-            pilihan = ambilInput(1);
-        }
-        Grid.updateGrid('O', pilihan - 1);
-    } */
-
     Grid.print();
     do {
         pilihan = ambilInput(1);
