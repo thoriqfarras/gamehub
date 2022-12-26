@@ -118,7 +118,7 @@ struct grid
 int ambilInput(int pemainKe)
 {
     string s;
-    char c[100];
+    char c[1];
     getInput:
         cout << "Pemain " << pemainKe << " > ";
         getline(cin, s);
